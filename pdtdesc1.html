@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main>
+        <!--Product 1 Image gallery section-->
+        <section class="pdt-gallery">
+            <!--Main product 1 image-->
+            <img src="assets/placeholder.jpg" alt="Product 1 (Black Coat) main image">
+
+            <!--Product 1 sub-image gallery-->
+            <div class="sub-gallery">
+                <img src="assets/placeholder.jpg" alt="Product 1 (Black Coat sub-image 1)">
+                <img src="assets/placeholder.jpg" alt="Product 1 (Black Coat sub-image 2)">
+                <img src="assets/placeholder.jpg" alt="Product 1 (Black Coat sub-image 3)">
+            </div>
+        </section>
+
+        <!--Product details section-->
+        <section class="pdt-details">s
+
+            <!--1st div with written details: Pdt Title, description and price -->
+            <div class="written-details">
+                <h1> Black Coat</h1>
+                <p> Prada - A relaxed fit blazer in a classic black</p>
+                <h2> AUD 1049.99</h2>
+            </div>
+
+            <!--2nd div with dropdowns-->
+            <div class="all-dropdowns">
+
+                <!--Size dropdown div-->
+                <div class="dropdown">
+                    <button onclick="">Size</button>
+                    <div class="hidden-content">
+                        <p>IT 40 | FR 34 | UK 7 | US 5</p>
+                    </div>
+                </div>
+
+                <!--Origin dropdown div-->
+                <div class="dropdown">
+                    <button onclick="">Origin</button>
+                    <div class="hidden-content">
+                        <p>Origin: Made in Italy</p>
+                    </div>
+                </div>
+
+                <!--Material dropdown div-->
+                <div class="dropdown">
+                    <button onclick="">Material</button>
+                    <div class="hidden-content">
+                        <p>Composition:</p>
+                        <ul>
+                            <li>Silk</li>
+                            <li>Wool</li>
+                            <li>BoucLE</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--Condition dropdown div-->
+                <div class="dropdown">
+                    <button onclick="">Condition</button>
+                    <div class="hidden-content">
+                        <p>Excellent condition, no obvious flaws. no stains nor markings.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--3rd div with add to bag and qty toggle-->
+            <div class="cart-actions">
+                <button onclick="">Add to bag</button>
+                <!--Quantity toggle-->
+                <div class="qty-toggle">
+                    <button>&#8743;</button>
+                    <span>QTY:</span>
+                    <span id="qty-number">1</span>
+                    <button>&#8744;</button>
+                </div>
+            </div>
+        </section>
+
+        <!--Added to cart notification-->
+        <div class="cart-notification" id="cart-notification">
+            <h3>Added to bag</h3>
+            <a href="cart.html">View Cart</a>
+            <div class="cart-notification-item">
+                <img src="assets/placeholder.jpg" alt="Black Coat">
+                <p>Black coat</p>
+                <div>
+                    <p>Size: IT 40</p>
+                    <p>QTY: 1</p>
+                </div>
+                <p>AUD 1049.99</p>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
