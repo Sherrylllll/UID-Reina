@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <!--cart top heading elements-->
+        <div class="cart-heading">
+            <h1> Shopping Bag</h1>
+            <a href="browse.html">
+                Continue Shopping
+            </a>
+        </div>
+
+        <!--Cart contents: product listing and subtotal card-->
+        <div class="cart-container">
+            <!--product table-->
+            <section class="product-table">
+                <table>
+                    <!--Table Header with titles-->
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+
+                    <!--First product's row-->
+                    <tbody>
+                        <tr>
+
+                            <td>
+                                <div class="carttable-product">
+                                    <img src="assets/placeholder.jpg" alt="product image - Black Coat">
+                                    <div class="cartt-pdttext">
+                                        <p>Black Coat</p>
+                                        <p>Size: IT 40</p>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td> AUD 1049.99</td>
+
+                            <td>
+                                <div class="carttable-quantity">
+                                    <div class="qty-toggle">
+                                        <button>&#8743;</button>
+                                        <span>QTY:</span>
+                                        <span id="qty-number-1">1</span>
+                                        <button>&#8744;</button>
+                                    </div>
+
+                                    <i class="fa-solid fa-trash"></i>
+                                </div>
+                            </td>
+
+                            <td>AUD 1049.99</td>
+
+                        </tr>
+
+                        <!--Second product's row-->
+                        <tr>
+
+                            <td>
+                                <div class="carttable-product">
+                                    <img src="assets/placeholder.jpg" alt="product image - Red Wool Dress">
+                                    <div class="cartt-pdttext">
+                                        <p>Red Wool Dress</p>
+                                        <p>Size: IT 38</p>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td> AUD 989.99</td>
+
+                            <td>
+                                <div class="carttable-quantity">
+                                    <div class="qty-toggle">
+                                        <button>&#8743;</button>
+                                        <span>QTY:</span>
+                                        <span id="qty-number-2">1</span>
+                                        <button>&#8744;</button>
+                                    </div>
+
+                                    <i class="fa-solid fa-trash"></i>
+                                </div>
+                            </td>
+
+                            <td>AUD 989.99</td>
+
+                        </tr>
+                    </tbody>
+
+                </table>
+            </section>
+
+            <!--The subtotal and checkout button link card section-->
+            <section class="subtotal-card">
+                <div>
+                    <h3>
+                        Subtotal
+                    </h3>
+                    <p>Taxes & shipping calculated at checkout</p>
+                </div>
+
+                <span id="subtotal-amount">AUD 2909.97</span>
+
+                <a href="checkout1.html">Checkout</a>
+
+            </section>
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>
