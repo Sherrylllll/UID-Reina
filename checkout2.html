@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
-
     <header> 
         <nav> 
             <!--Menu button-->
@@ -99,67 +96,76 @@
             </ul>
         </div>
     </header>
-    
-    <main>
-        <!--Checkout's 1st page's header part containing the checkout heading and progress bar-->
-        <section class="checkout1-header">
 
+    <main>
+        <!--Checkout's 2nd page's header part containing the checkout heading and progress bar-->
+        <section class="checkout2-header">
             <h1>Checkout</h1>
             <div class="progressbar-bg">
                 <div class="progressbar-fill"></div>
             </div>
         </section>
 
-        <!--Checkout1's fill-in forms section-->
-        <form>
-            <!--Checkout's 1st page fill-in forms Address section-->
-            <section class="address-form">
-                <h2 class="form-category-title">Address</h2>
-                <div class="address-staddress">
-                    <p>Street Address</p>
-                    <input type="text" placeholder="Type here...">
+        <!--payment header-->
+        <h2>Payment</h2>
+
+        <!--Div for form and subtotal card sections-->
+        <div class="checkout2-content">
+            
+            <!--form filling section-->
+            <section class="checkout2-form">
+                
+                <!--Card payment method form section-->
+                <div class="card-form">
+                    <h3 class="form-category-title">Card</h3>
+                    <div class="card-number">
+                        <p>Card Number</p>
+                        <input type="text" placeholder="Type here...">
+                    </div>
+                    <div class="card-expiry">
+                        <p>Expiry</p>
+                        <input type="text" placeholder="Type here...">
+                    </div>
+                    <div class="card-cvc">
+                        <p>CVC</p>
+                        <input type="text" placeholder="Type here...">
+                    </div>
+                    <div class="card-name">
+                        <p>Name on Card</p>
+                        <input type="text" placeholder="Type here...">
+                    </div>
                 </div>
-                <div class="address-suburb">
-                    <p>Suburb</p>
-                    <input type="text" placeholder="Type here...">
-                </div>
-                <div class="address-state">
-                    <p>State</p>
-                    <input type="text" placeholder="Type here...">
-                </div>
-                <div class="address-pincode">
-                    <p>Post Code</p>
-                    <input type="text" placeholder="Type here...">
+
+                <!--Other payments option's section-->
+                <div class="other-payment">
+                    <h3 class="form-category-title">Other methods</h3>
+                    <img src="assets/placeholder" alt="payment option 1">
+                    <img src="assets/placeholder" alt="payment option 2">
+                    <img src="assets/placeholder" alt="payment option 3">
+                    <img src="assets/placeholder" alt="payment option 4">
                 </div>
             </section>
 
-            <!--Checkout's 1st page fill-in forms Contact section-->
-            <section class="contact-form">
-                <h2 class="form-category-title">Contact</h2>
-                <div class="contact-email">
-                    <p>Email Address</p>
-                    <input type="email" placeholder="Type here...">
+            <!--order summary section-->
+            <section class="order-sum">
+                <h2>Order Summary</h2>
+                <div class="order-row">
+                    <p>Subtotal</p>
+                    <p id="checkout-subtotal">AUD   2959.97</p>
                 </div>
-                <div class="contact-phone">
-                    <p>Phone</p>
-                    <input type="tel" placeholder="Type here...">
+                <div class="order-row">
+                    <p>Shipping</p>
+                    <p id="checkout-shipping">AUD 30.00</p>
                 </div>
-            </section>
-
-            <!--Checkout's 1st page fill-in forms Additional inst section-->
-            <section class="addinst-form">
-                <h2 class="form-category-title">Additional Instructions</h2>
-                <div class="addinst-part">
-                    <p>Instructions for delivery (ex. leave it infront of the door)</p>
-                    <textarea placeholder="Type here..."></textarea>
+                <hr>
+                <div class="order-totalrow">
+                    <p>Total</p>
+                    <p id="checkout-total">AUD  2959.97</p>
                 </div>
             </section>
-        </form>
-
-        <a href="checkout2.html" class="checkout1-next">Next</a>
+        </div>
+        <a href="confirmation.html" class="paynow-button">Pay Now</a>
     </main>
-
-
+    
 </body>
-
 </html>
