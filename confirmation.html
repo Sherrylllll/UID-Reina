@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout page</title>
+    <title>Confirmation page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
     <header>
         <nav>
@@ -100,75 +98,44 @@
     </header>
 
     <main>
-        <!--Checkout's 2nd page's header part containing the checkout heading and progress bar-->
-        <section class="checkout2-header">
-            <h1>Checkout</h1>
-            <div class="progressbar-bg">
-                <div class="progressbar-fill"></div>
+        <section class="confirmation-content">
+
+            <h1>Confirmation</h1>
+
+            <!--Tick circle div-->
+            <div class="tick-circle">
+                <i class="fa-solid fa-check"></i>
             </div>
+
+            <!--order confirmation and estimated delivery-->
+            <p>Your order has been placed</p>
+            <p>Estimated delivery: 1st May 2025, 10am</p>
+
+            <!--product cards divs-->
+            <div class="confirmation-pdtcard">
+                <img src="assets/placeholder.jpg" alt="product image">
+                <p class="conf-pdt-title">Black Coat</p>
+                <div class="conf-pdt-details">
+                    <p>Size: IT 40</p>
+                    <p>QTY: 1</p>
+                </div>
+                <p class="conf-pdtcard-price">AUD 1049.99</p>
+            </div>
+
+            <div class="confirmation-pdtcard">
+                <img src="assets/placeholder.jpg" alt="product image">
+                <p class="conf-pdt-title">Red Wool Dress</p>
+                <div class="conf-pdt-details">
+                    <p>Size: IT 38</p>
+                    <p>QTY: 1</p>
+                </div>
+                <p class="conf-pdtcard-price">AUD 989.99</p>
+            </div>
+
+            <!--Continue shopping button link to browse page-->
+            <a href="browse.html">Continue Shopping</a>
+
         </section>
-
-        <!--payment header-->
-        <h2>Payment</h2>
-
-        <!--Div for form and subtotal card sections-->
-        <div class="checkout2-content">
-
-            <!--form filling section-->
-            <section class="checkout2-form">
-
-                <!--Card payment method form section-->
-                <div class="card-form">
-                    <h3 class="form-category-title">Card</h3>
-                    <div class="card-number">
-                        <p>Card Number</p>
-                        <input type="text" placeholder="Type here...">
-                    </div>
-                    <div class="card-expiry">
-                        <p>Expiry</p>
-                        <input type="text" placeholder="Type here...">
-                    </div>
-                    <div class="card-cvc">
-                        <p>CVC</p>
-                        <input type="text" placeholder="Type here...">
-                    </div>
-                    <div class="card-name">
-                        <p>Name on Card</p>
-                        <input type="text" placeholder="Type here...">
-                    </div>
-                </div>
-
-                <!--Other payments option's section-->
-                <div class="other-payment">
-                    <h3 class="form-category-title">Other methods</h3>
-                    <img src="assets/placeholder" alt="payment option 1">
-                    <img src="assets/placeholder" alt="payment option 2">
-                    <img src="assets/placeholder" alt="payment option 3">
-                    <img src="assets/placeholder" alt="payment option 4">
-                </div>
-            </section>
-
-            <!--order summary section-->
-            <section class="order-sum">
-                <h2>Order Summary</h2>
-                <div class="order-row">
-                    <p>Subtotal</p>
-                    <p id="checkout-subtotal">AUD 2959.97</p>
-                </div>
-                <div class="order-row">
-                    <p>Shipping</p>
-                    <p id="checkout-shipping">AUD 30.00</p>
-                </div>
-                <hr>
-                <div class="order-totalrow">
-                    <p>Total</p>
-                    <p id="checkout-total">AUD 2959.97</p>
-                </div>
-            </section>
-        </div>
-        <a href="confirmation.html" class="paynow-button">Pay Now</a>
     </main>
-
 </body>
-
 </html>
