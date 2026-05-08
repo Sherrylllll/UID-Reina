@@ -1,0 +1,198 @@
+
+
+/* ===== CSS RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== CSS VARIABLES ===== */
+:root {
+    --bg-color: #FBFAF1;
+    --text-color: #1a1a1a;
+    --font-main: 'Playfair Display', serif;
+}
+
+/* ===== GLOBAL STYLES ===== */
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    background-image: url(assets/reina-textureback.png);
+    background-size: auto;
+    background-repeat: repeat;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+nav {
+    background-color: var(--bg-color);
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 80px;
+    z-index: 1000;
+    justify-content:space-between;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4.0rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+/* ===== NAV ELEMENTS ===== */
+
+/* Hide desktop elements on mobile by default */
+.desktop-left-links {
+    display: none;
+}
+
+.desktop-right-buttons {
+    display: none;
+    
+}
+
+/* Style mobile icons */
+.mobile-right-buttons {
+    display: flex;
+    gap: 16px;
+    align-items:center;
+}
+
+/* Hide hamburger on desktop - we'll show it on mobile */
+.mobile-menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+/* Nav icon and link sizing */
+nav a, nav button {
+    font-size: 1.9rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.nav-icon, .menu-icon, .search-icon, .bag-icon, .wishlist-icon, .account-icon, .user-icon {
+    width: 35px;
+    height: 35px;
+    filter: brightness(0);
+}
+
+/* ===== HOME HERO ===== */
+
+.homepage-hero {
+    position: relative;
+}
+
+.homepage-hero img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+}
+
+.herotext-card {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(assets/reina-textureback.png);
+    background-size: cover;
+    background-repeat: repeat;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    width: 260px;
+    text-align: center;
+    
+    border-radius: 12px;
+    border: 0.5px solid rgba(0,0,0,2);
+    
+}
+
+.herotext-card h1 em {
+    font-weight: 300;
+    font-style: italic;
+}
+
+.screw {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 7px solid rgb(104, 101, 101);
+    position: absolute;
+}
+.top-left { top: 18px; left: 18px; }
+.top-right { top: 18px; right: 18px; }
+.bottom-left { bottom: 18px; left: 18px; }
+.bottom-right { bottom: 18px; right: 18px; }
+
+.browsecoll-button {
+    position:absolute;
+    top: 65%;
+    left: 50%;
+    width: 270px;
+    transform: translateX(-50%);
+    background-color: var(--bg-color);
+    z-index: 1000;
+    padding: 12px 25px;
+    border: 1px solid var(--text-color);
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 400;
+    border-radius: 9px;
+    
+    
+}
+
+
+/* ===== MENU OVERLAY ===== */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 2000;
+    padding: 30px;
+}
+
+@media (min-width: 1024px) {
+    .desktop-left-links {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+    }
+    .desktop-right-buttons {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    .mobile-right-buttons {
+        display: none;
+    }
+    .mobile-menu-button {
+        display: none;
+    }
+}
+
