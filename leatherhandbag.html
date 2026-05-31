@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <!--Menu button-->
+            <button onclick="" class="mobile-menu-button">
+                <img src="icons/menu-light.svg" alt="menu button" class="menu-icon">
+            </button>
+
+            <!--Reina home toggle-->
+            <a href="index.html" class="nav-logo">Reina</a>
+
+            <!--Desktop Left side links-->
+            <div class="desktop-left-links">
+                <!--Home toggle in left links-->
+                <a href="index.html">
+                    Home
+                </a>
+
+                <!--Create account button-->
+                <a href="">
+                    Create Account
+                </a>
+
+                <!--Back toggle-->
+                <a href="">
+                    Back
+                </a>
+            </div>
+
+
+
+            <!--Mobile Right side buttons-->
+            <div class="mobile-right-buttons">
+                <!--Search button-->
+                <a href="search.html">
+                    <img src="icons/search-light.svg" alt="search button" class="search-icon">
+                </a>
+
+                <!--Shopping bag button-->
+                <a href="cartpage.html">
+                    <img src="icons/bag-light.svg" alt="bag button" class="bag-icon">
+                </a>
+            </div>
+
+            <!--Desktop Right side buttons-->
+            <div class="desktop-right-buttons">
+
+                <!--Wishlist button-->
+                <a href="">
+                    <img src="icons/heart-light.svg" alt="Wishlist button" class="wishlist-icon">
+                </a>
+
+                <!--Account button-->
+                <a href="">
+                    <img src="icons/user-light.svg" alt="account button" class="account-icon">
+                </a>
+
+                <!--Search button-->
+                <a href="search.html">
+                    <img src="icons/search-light.svg" alt="search button" class="search-icon">
+                </a>
+
+                <!--Shopping bag button-->
+                <a href="cartpage.html">
+                    <img src="icons/bag-light.svg" alt="bag button" class="bag-icon">
+                </a>
+            </div>
+        </nav>
+
+        <!--Menu overlay-->
+        <div class="menu-overlay">
+            <!--Menu heading & close button-->
+            <div class="menu-overlay-top">
+                <h3>Menu</h3>
+                <button onclick="">
+                    <img src="icons/menu-light.svg" alt="menu button" class="menu-icon">
+                </button>
+
+            </div>
+
+            <!--Menu links to pages list-->
+            <ul class="menu-linklist">
+                <li> <a href="index.html">Home</a> </li>
+                <li> <a href="">Account</a> </li>
+                <li> <a href="">Create Account</a> </li>
+                <li> <a href="">Wishlist</a> </li>
+                <li> <a href="browse.html">Browse</a> </li>
+                <li> <a href="">Back</a> </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!--Product 2 Image gallery section-->
+        <section class="pdt-gallery">
+            <!--Main product 2 image-->
+            <img src="assets/leatherhandbagimage.webp" alt="Leather handbag main image">
+
+            <!--Product 2 sub-image gallery-->
+            <div class="sub-gallery">
+                <img src="assets/leatherhandbagimage.webp" alt="Leather handbag sub-image 1">
+                <img src="assets/leatherhandbagimage.webp" alt="Leather handbag sub-image 2">
+                <img src="assets//leatherhandbagimage.webp" alt="Leather handbag sub-image 3">
+            </div>
+        </section>
+
+        <!--Product details section-->
+        <section class="pdt-details">
+
+            <!--1st div with written details: Pdt Title, description and price -->
+            <div class="written-details">
+                <h1> Leather handbag</h1>
+                <p> Martin Sitbon - Red, black and pink printed bag with leather handles</p>
+                <h2> AUD 789.00</h2>
+            </div>
+
+            <!--2nd div with dropdowns-->
+            <div class="all-dropdowns">
+
+                <!--Size dropdown div-->
+                <div class="dropdown">
+                    <button onclick="">Size</button>
+                    <div class="hidden-content">
+                        <p>IT 38 | FR 32 | UK 6 | US 4</p>
+                    </div>
+                </div>
+
+                <!--Origin dropdown div-->
+                <div class="dropdown">
+                    <button onclick="">Origin</button>
+                    <div class="hidden-content">
+                        <p>Origin: Made in Italy</p>
+                    </div>
+                </div>
+
+                <!--Material dropdown div-->
+                <div class="dropdown">
+                    <button onclick="">Material</button>
+                    <div class="hidden-content">
+                        <p>Composition:</p>
+                        <ul>
+                            <li>Silk</li>
+                            <li>Wool</li>
+                            <li>Grosgrain Ribbon Trim</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--Condition dropdown div-->
+                <div class="dropdown">
+                    <button onclick="">Condition</button>
+                    <div class="hidden-content">
+                        <p>Excellent condition, no obvious flaws. no stains nor markings.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--3rd div with add to bag and qty toggle-->
+            <div class="cart-actions">
+                <button onclick="">Add to bag</button>
+                <!--Quantity toggle-->
+                <div class="qty-toggle">
+                    <button>&#8743;</button>
+                    <span>QTY:</span>
+                    <span id="qty-number">1</span>
+                    <button>&#8744;</button>
+                </div>
+            </div>
+        </section>
+
+        <!--Added to cart notification-->
+        <div class="cart-notification" id="cart-notification">
+            <h3>Added to bag</h3>
+            <a href="cartpage.html">View Cart</a>
+            <div class="cart-notification-item">
+                <img src="assets/leatherhandbagimage.webp" alt="Leather handbag">
+                <p>Leather Handbag</p>
+                <div>
+                    <p>Size: IT 38</p>
+                    <p>QTY: 1</p>
+                </div>
+                <p>AUD 989.99</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sharvari Rubade — Reina Melbourne</p>
+    </footer>
+
+</body>
+
+</html>
