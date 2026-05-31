@@ -94,6 +94,22 @@ nav {
     cursor: pointer;
     font-size: 1.8rem;
 }
+.menu-icon {
+    width: 35px;
+    height: 35px;
+    filter: brightness(0);
+    background: none;
+    border: none;
+}
+
+.menu-close-icon {
+    width: 35px;
+    height: 35px;
+    filter: brightness(0);
+    background: none;
+    border: none;
+}
+
 
 /* Nav icon and link sizing */
 nav a,
@@ -104,7 +120,6 @@ nav button {
 }
 
 .nav-icon,
-.menu-icon,
 .search-icon,
 .bag-icon,
 .wishlist-icon,
@@ -341,7 +356,7 @@ nav button {
     bottom: 4.1px;
     left: 20px;
     color: white;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 400;
 }
 
@@ -355,7 +370,7 @@ nav button {
 }
 
 .browse-category h2 {
-    font-size: 2.3rem;
+    font-size: 2.0rem;
     font-weight:500;
     margin-bottom: 5px;
 }
@@ -398,6 +413,7 @@ nav button {
     height: 180px;
     object-fit: cover;
     flex-shrink: 0;
+    border-radius: 5px;
 }
 
 .browse-productcard h3 {
@@ -407,7 +423,7 @@ nav button {
 }
 
 .browse-productcard p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: rgba(0, 0, 0, 0.6);
 }
 
@@ -430,6 +446,19 @@ nav button {
     .browse-ourcollection img {
         height: 150px;
     }
+
+    .browse-ourcollection h1 {
+        font-size: 3.5rem;
+    }
+    .browse-category h2 {
+        font-size: 2.3rem;
+    }
+    .browse-productcard p {
+    font-size: 0.9rem;
+    }
+    
+
+    
 }
 
 
