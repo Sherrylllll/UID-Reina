@@ -38,3 +38,17 @@ dropdowns.forEach(function(dropdown) {
     }
 });
 
+// ===== ADD TO BAG + CART NOTIFICATION =====
+const addToBagButton = document.querySelector('.cart-actions > button');
+const cartNotification = document.getElementById('cart-notification');
+
+if (addToBagButton && cartNotification) {
+    addToBagButton.addEventListener('click', function() {
+        cartNotification.classList.add('active');
+
+        // Auto hide after 3 seconds
+        setTimeout(function() {
+            cartNotification.classList.remove('active');
+        }, 3000);
+    });
+}
