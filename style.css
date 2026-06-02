@@ -250,7 +250,7 @@ nav button {
     text-align: center;
     background-image: none;
     border: 1.5px solid var(--text-color);
-    margin: 20px;
+    margin: 10px;
 }
 
 .aboutus-text {
@@ -290,18 +290,15 @@ nav button {
         padding: 70px 50px;
         border: 2.5px solid rgba(0, 0, 0, 0.5);
     }
-
     .herotext-card h1 {
         margin-top: 8px;
         font-size: 54px;
     }
-
     .herotext-card p {
         font-size: 25px;
         margin-top: 25px;
         font-weight: 500;
     }
-
     .browsecoll-button {
         width: 280px;
         font-size: 1.7rem;
@@ -309,33 +306,27 @@ nav button {
         box-shadow: 0px 4px 15px -1px #000000;
 
     }
-
     .screw {
         border: 10px solid rgb(104, 101, 101);
     }
 
-
-    /* 2. About Us text on desktop */
-
-    
-
+    /* About Us text on desktop */
     .aboutus-text {
         font-size: 10rem;
         margin-bottom: -80px;
     }
-
     .homepage-aboutus img {
         width: 50%;
     }
-
-    /* 4. Paragraphs spread out on desktop */
     .aboutus-paras {
         max-width: 1030px;
     }
-
     .aboutus-paras p {
         font-size: 1.5rem;
         line-height: 1.25;
+    }
+    .homepage-aboutus {
+        margin: 20px;
     }
 }
 
