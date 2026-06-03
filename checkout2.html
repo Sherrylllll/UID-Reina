@@ -7,7 +7,8 @@
     <title>Checkout page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -34,7 +35,7 @@
                 </a>
 
                 <!--Back toggle-->
-                <a href="">
+                <a href="" class="nav-back">
                     Back
                 </a>
             </div>
@@ -112,44 +113,53 @@
         </section>
 
         <!--payment header-->
-        <h2>Payment</h2>
+
 
         <!--Div for form and subtotal card sections-->
         <div class="checkout2-content">
+            <div class="checkout2-left">
+                <h2>Payment</h2>
+                <!--form filling section-->
+                <section class="checkout2-form">
 
-            <!--form filling section-->
-            <section class="checkout2-form">
+                    <!--Card payment method form section-->
+                    <div class="card-form">
+                        <h3 class="form-category-title">Card</h3>
+                        <div class="card-number">
+                            <p>Card Number</p>
+                            <input type="text" placeholder="Type here...">
+                        </div>
+                        <div class="card-expiry">
+                            <p>Expiry</p>
+                            <input type="text" placeholder="Type here...">
+                        </div>
+                        <div class="card-cvc">
+                            <p>CVC</p>
+                            <input type="text" placeholder="Type here...">
+                        </div>
+                        <div class="card-name">
+                            <p>Name on Card</p>
+                            <input type="text" placeholder="Type here...">
+                        </div>
+                    </div>
 
-                <!--Card payment method form section-->
-                <div class="card-form">
-                    <h3 class="form-category-title">Card</h3>
-                    <div class="card-number">
-                        <p>Card Number</p>
-                        <input type="text" placeholder="Type here...">
-                    </div>
-                    <div class="card-expiry">
-                        <p>Expiry</p>
-                        <input type="text" placeholder="Type here...">
-                    </div>
-                    <div class="card-cvc">
-                        <p>CVC</p>
-                        <input type="text" placeholder="Type here...">
-                    </div>
-                    <div class="card-name">
-                        <p>Name on Card</p>
-                        <input type="text" placeholder="Type here...">
-                    </div>
-                </div>
+                    <!--Other payments option's section-->
+                    <div class="other-payment">
+                        <h3 class="form-category-title">Other methods</h3>
+                        <div class="other-pay-images1">
+                            <img src="assets/paypalpayment.png" alt="payment option 1">
+                            <img src="assets/gpaypayment.png" alt="payment option 2">
+    
+                        </div>
+                        <div class="other-pay-images2">
+                            <img src="assets/renamepayment.png" alt="payment option 3">
+                            <img src="assets/shoppayment.png" alt="payment option 4">
+                        </div>
 
-                <!--Other payments option's section-->
-                <div class="other-payment">
-                    <h3 class="form-category-title">Other methods</h3>
-                    <img src="assets/placeholder" alt="payment option 1">
-                    <img src="assets/placeholder" alt="payment option 2">
-                    <img src="assets/placeholder" alt="payment option 3">
-                    <img src="assets/placeholder" alt="payment option 4">
-                </div>
-            </section>
+                    </div>
+                </section>
+            </div>
+
 
             <!--order summary section-->
             <section class="order-sum">

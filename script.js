@@ -168,7 +168,7 @@ function renderCart() {
                 <div class="carttable-quantity">
                     <div class="qty-toggle">
                         <button onclick="updateQty(${index}, 1)">&#8743;</button>
-                        <span>QTY:</span>
+                        <span class="qty-label-inline">QTY:</span>
                         <span>${item.qty}</span>
                         <button onclick="updateQty(${index}, -1)">&#8744;</button>
                     </div>
@@ -256,5 +256,204 @@ if (nextButton) {
         } else {
             alert('Please fill in all fields correctly before continuing.');
         }
+    });
+}
+
+// ===== CHECKOUT 2 - Form validation =====
+const payNowButton = document.querySelector('.paynow-button');
+
+if (payNowButton) {
+    payNowButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        let allValid = true;
+
+        // Card number - must be 16 digits
+        const cardNumber = document.querySelector('.card-number input');
+        if (cardNumber) {
+            const cardRegex = /^[0-9]{16}$/;
+            if (!cardRegex.test(cardNumber.value.replace(/\s/g, ''))) {
+                allValid = false;
+                cardNumber.style.borderColor = 'red';
+                cardNumber.placeholder = 'Must be 16 digits';
+            } else {
+                cardNumber.style.borderColor = '';
+            }
+        }
+
+        // Expiry - must be MM/YY format
+        const expiry = document.querySelector('.card-expiry input');
+        if (expiry) {
+            const expiryRegex = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
+            if (!expiryRegex.test(expiry.value)) {
+                allValid = false;
+                expiry.style.borderColor = 'red';
+                expiry.placeholder = 'Must be MM/YY format';
+            } else {
+                expiry.style.borderColor = '';
+            }
+        }
+
+        // CVC - must be exactly 3 digits
+        const cvc = document.querySelector('.card-cvc input');
+        if (cvc) {
+            const cvcRegex = /^[0-9]{3}$/;
+            if (!cvcRegex.test(cvc.value)) {
+                allValid = false;
+                cvc.style.borderColor = 'red';
+                cvc.placeholder = 'Must be 3 digits';
+            } else {
+                cvc.style.borderColor = '';
+            }
+        }
+
+        // Name on card - required, no numbers allowed
+        const cardName = document.querySelector('.card-name input');
+        if (cardName) {
+            const nameRegex = /^[a-zA-Z\s]{2,}$/;
+            if (!nameRegex.test(cardName.value.trim())) {
+                allValid = false;
+                cardName.style.borderColor = 'red';
+                cardName.placeholder = 'Name must contain letters only';
+            } else {
+                cardName.style.borderColor = '';
+            }
+        }
+
+        if (allValid) {
+            window.location.href = 'confirmation.html';
+        } else {
+            alert('Please fill in all payment details correctly.');
+        }
+    });
+}
+// ===== SAVE ORDER ON CHECKOUT 2 =====
+if (payNowButton) {
+    payNowButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        let allValid = true;
+
+        // (your existing validation code stays unchanged)
+
+        if (allValid) {
+            const cart = getCart();
+            localStorage.setItem('reinaOrder', JSON.stringify(cart));
+            localStorage.removeItem('reinaCart'); // clear cart after purchase
+            window.location.href = 'confirmation.html';
+        } else {
+            alert('Please fill in all payment details correctly.');
+        }
+    });
+}
+// ===== CONFIRMATION PAGE RENDER =====
+const confirmationContainer = document.querySelector('.confirmation-content');
+
+if (confirmationContainer) {
+    const order = JSON.parse(localStorage.getItem('reinaOrder')) || [];
+
+    // Remove placeholder cards
+    const oldCards = confirmationContainer.querySelectorAll('.confirmation-pdtcard');
+    oldCards.forEach(card => card.remove());
+
+    // Insert real purchased items
+    order.forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('confirmation-pdtcard');
+
+        card.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <p class="conf-pdt-title">${item.name}</p>
+            <div class="conf-pdt-details">
+                <p>Size: ${item.size}</p>
+                <p>QTY: ${item.qty}</p>
+            </div>
+            <p class="conf-pdtcard-price">${item.price}</p>
+        `;
+
+        confirmationContainer.insertBefore(
+            card,
+            confirmationContainer.querySelector('a') // insert before Continue Shopping button
+        );
+    });
+}
+
+// ===== NAV BACK BUTTON =====
+const backLink = document.querySelector('.nav-back');
+
+if (backLink) {
+    backLink.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // If there *is* a previous page in history, go back
+        if (window.history.length > 1) {
+            window.history.back();
+        } else {
+            // If user opened the page directly (no history), send them to browse
+            window.location.href = 'browse.html';
+        }
+    });
+}
+
+// ===== SEARCH PAGE - Navigate to results =====
+const searchInput = document.getElementById('search-input');
+const searchIcon = document.querySelector('.search-bar img');
+
+if (searchInput) {
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            window.location.href = 'searchresults.html';
+        }
+    });
+}
+
+if (searchIcon) {
+    searchIcon.style.cursor = 'pointer';
+    searchIcon.addEventListener('click', function() {
+        window.location.href = 'searchresults.html';
+    });
+}
+
+// ===== CATEGORY FILTERS (Search page) =====
+const filterBtns = document.querySelectorAll('.filter-btn');
+
+filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        const category = btn.textContent.trim().toLowerCase();
+
+        if (category === 'all') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
+        const categoryMap = {
+            'featured': 'category-featured',
+            'coats': 'category-coats',
+            'dresses': 'category-dresses',
+            'handbags': 'category-handbags',
+            'magazines': 'category-magazines'
+        };
+
+        const targetId = categoryMap[category];
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// ===== FILTER OVERLAY (Search results) =====
+const filterBtn = document.getElementById('filter-btn');
+const filterOverlay = document.getElementById('filter-overlay');
+const closeFilter = document.getElementById('close-filter');
+
+if (filterBtn && filterOverlay) {
+    filterBtn.addEventListener('click', function() {
+        filterOverlay.classList.toggle('active');
+    });
+}
+
+if (closeFilter && filterOverlay) {
+    closeFilter.addEventListener('click', function() {
+        filterOverlay.classList.remove('active');
     });
 }
