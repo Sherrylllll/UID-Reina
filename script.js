@@ -255,6 +255,7 @@ if (nextButton) {
             window.location.href = 'checkout2.html';
         } else {
             alert('Please fill in all fields correctly before continuing.');
+            return;
         }
     });
 }
@@ -323,27 +324,11 @@ if (payNowButton) {
             window.location.href = 'confirmation.html';
         } else {
             alert('Please fill in all payment details correctly.');
+            return;
         }
     });
 }
-// ===== SAVE ORDER ON CHECKOUT 2 =====
-if (payNowButton) {
-    payNowButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        let allValid = true;
 
-        // (your existing validation code stays unchanged)
-
-        if (allValid) {
-            const cart = getCart();
-            localStorage.setItem('reinaOrder', JSON.stringify(cart));
-            localStorage.removeItem('reinaCart'); // clear cart after purchase
-            window.location.href = 'confirmation.html';
-        } else {
-            alert('Please fill in all payment details correctly.');
-        }
-    });
-}
 // ===== CONFIRMATION PAGE RENDER =====
 const confirmationContainer = document.querySelector('.confirmation-content');
 
@@ -393,67 +378,17 @@ if (backLink) {
     });
 }
 
-// ===== SEARCH PAGE - Navigate to results =====
-const searchInput = document.getElementById('search-input');
-const searchIcon = document.querySelector('.search-bar img');
+// ===== PREVENT CHECKOUT WITH EMPTY CART =====
+const checkoutLink = document.querySelector('.subtotal-card a');
 
-if (searchInput) {
-    searchInput.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') {
-            window.location.href = 'searchresults.html';
+if (checkoutLink) {
+    checkoutLink.addEventListener('click', function (e) {
+        const cart = getCart();
+        if (!cart || cart.length === 0) {
+            e.preventDefault();
+            alert("Your cart is empty. Add items before checking out.");
         }
     });
 }
 
-if (searchIcon) {
-    searchIcon.style.cursor = 'pointer';
-    searchIcon.addEventListener('click', function() {
-        window.location.href = 'searchresults.html';
-    });
-}
 
-// ===== CATEGORY FILTERS (Search page) =====
-const filterBtns = document.querySelectorAll('.filter-btn');
-
-filterBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-        const category = btn.textContent.trim().toLowerCase();
-
-        if (category === 'all') {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            return;
-        }
-
-        const categoryMap = {
-            'featured': 'category-featured',
-            'coats': 'category-coats',
-            'dresses': 'category-dresses',
-            'handbags': 'category-handbags',
-            'magazines': 'category-magazines'
-        };
-
-        const targetId = categoryMap[category];
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
-
-// ===== FILTER OVERLAY (Search results) =====
-const filterBtn = document.getElementById('filter-btn');
-const filterOverlay = document.getElementById('filter-overlay');
-const closeFilter = document.getElementById('close-filter');
-
-if (filterBtn && filterOverlay) {
-    filterBtn.addEventListener('click', function() {
-        filterOverlay.classList.toggle('active');
-    });
-}
-
-if (closeFilter && filterOverlay) {
-    closeFilter.addEventListener('click', function() {
-        filterOverlay.classList.remove('active');
-    });
-}
