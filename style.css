@@ -21,6 +21,11 @@ body {
     background-size: auto;
     background-repeat: repeat;
 }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+}
 
 .homepage {
     background-image: none;
@@ -49,14 +54,13 @@ img {
 
 nav {
     background-color: var(--bg-color);
-    position: sticky;
     top: 0;
     display: flex;
     align-items: center;
     padding: 0 10px;
     height: 80px;
-    z-index: 1000;
     justify-content: space-between;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
 .nav-logo {
@@ -110,6 +114,19 @@ nav {
     background: none;
     border: none;
 }
+.menu-overlay-top button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-overlay-top button img {
+    width: 35px;
+    height: 35px;
+    filter: brightness(0); /* same as nav icons */
+}
+
 
 
 /* Nav icon and link sizing */
@@ -253,7 +270,7 @@ nav button {
 /* ===== HOME ABOUT US SECTION ===== */
 
 .homepage-aboutus {
-    background-color: var(--bg-color);
+    background-color:#fcfae7;
     position: relative;
     padding: 60px 40px;
     text-align: center;
