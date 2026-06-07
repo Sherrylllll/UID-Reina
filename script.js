@@ -321,12 +321,38 @@ if (payNowButton) {
         }
 
         if (allValid) {
+            const cart = getCart();
+            localStorage.setItem('reinaOrder', JSON.stringify(cart));
+            // Clear the cart after purchase
+            localStorage.removeItem('reinaCart');
             window.location.href = 'confirmation.html';
         } else {
             alert('Please fill in all payment details correctly.');
             return;
         }
     });
+}
+
+// ===== CHECKOUT 2 - Load cart totals =====
+const checkout2Subtotal = document.getElementById('checkout-subtotal');
+const checkout2Shipping = document.getElementById('checkout-shipping');
+const checkout2Total = document.getElementById('checkout-total');
+
+if (checkout2Subtotal) {
+    const cart = getCart();
+    let subtotal = 0;
+
+    cart.forEach(function(item) {
+        const priceNum = parseFloat(item.price.replace('AUD', '').trim());
+        subtotal += priceNum * item.qty;
+    });
+
+    const shipping = 30.00;
+    const total = subtotal + shipping;
+
+    checkout2Subtotal.textContent = 'AUD ' + subtotal.toFixed(2);
+    checkout2Shipping.textContent = 'AUD ' + shipping.toFixed(2);
+    checkout2Total.textContent = 'AUD ' + total.toFixed(2);
 }
 
 // ===== CONFIRMATION PAGE RENDER =====
